@@ -197,7 +197,6 @@ angular.module('myApp.controllers', [])
         $scope.credential = {
             name: '',
             email: '',
-            login: '',
             password: ''
         };
 
@@ -205,6 +204,8 @@ angular.module('myApp.controllers', [])
             var fd = new FormData();
             fd.append('uid', $scope.currentUser.uid);
             fd.append('login', $scope.currentUser.login);
+            console.log("login:");
+            console.log($scope.currentUser.login);
             if (typeof credential != 'undefined') {
                 if (typeof credential.certfile != 'undefined') {
                     fd.append('certfile', credential.certfile);
